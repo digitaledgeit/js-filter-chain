@@ -1,0 +1,10 @@
+{
+  "name": "filter-collection",
+  "devDependencies": {
+    "mocha": "~1.18.2",
+    "assert": "~1.1.1"
+  },
+  "scripts": {
+    "test": "mocha -R spec ./test/test.js"
+  }
+}
