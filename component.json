@@ -1,3 +1,4 @@
 {
-  "name": "filterer"
+  "name": "filterer",
+  "scripts": ["index.js"]
 }
