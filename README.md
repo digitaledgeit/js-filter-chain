@@ -1,10 +1,10 @@
-# dead-simple-filter-chain
+# digitaledgeit-filter-chain
 
-A dead simple filter chain for running multiple filters on an input value.
+A simple filter chain for running multiple filters on an input value.
 
 ## Methods
 
-### filterChain(filters)
+### FilterChain(filters)
 
 Create a new filter chain from an array of filter functions.
 

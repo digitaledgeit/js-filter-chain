@@ -67,5 +67,3 @@ FilterChain.prototype.filter = function (value, callback) {
 }
 
 module.exports = FilterChain;
-
-

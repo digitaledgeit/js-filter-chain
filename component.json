@@ -1,5 +1,6 @@
 {
-	"name": "filterer",
-	"description": "A dead simple filter chain for running multiple filters on an input value.",
+	"name": "filter-chain",
+	"description": "A simple filter chain for running multiple filters on an input value.",
+	"keywords": ["filter", "filter-chain", "input-filter", "chain", "validate", "input", "validator"],
 	"scripts": ["index.js"]
 }
