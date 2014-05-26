@@ -1,10 +1,14 @@
 {
-  "name": "filterer",
-  "devDependencies": {
-    "mocha": "~1.18.2",
-    "assert": "~1.1.1"
-  },
-  "scripts": {
-    "test": "mocha -R spec ./test/test.js"
-  }
+	"name": "filterer",
+	"description": "A dead simple filter chain for running multiple filters on an input value.",
+	"repository" : {
+		"type": "git",
+		"url": "https://github.com/jameslnewell/js-filterer.git"
+	},
+	"devDependencies": {
+		"mocha": "~1.18.2"
+	},
+	"scripts": {
+		"test": "mocha -R spec ./test/test.js"
+	}
 }

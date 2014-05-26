@@ -1,4 +1,5 @@
 {
-  "name": "filterer",
-  "scripts": ["index.js"]
+	"name": "filterer",
+	"description": "A dead simple filter chain for running multiple filters on an input value.",
+	"scripts": ["index.js"]
 }

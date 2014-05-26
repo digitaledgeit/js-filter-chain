@@ -1,23 +1,44 @@
-var assert = require('assert')
-var FilterCollection = require('../index.js');
+var assert      = require('assert');
+var filterChain = require('../index.js');
 
-var collection = new FilterCollection([
-  function(val) {
-    return val.replace(/[a-zA-Z]*/g, '');
-  },
-  function(val) {
-    return val.replace(/\s*/g, '');
-  }
-]);
+/**
+ * Removes whitespace characters
+ * @param   {string}    value
+ * @returns {string}
+ */
+function removeWhitespace(value) {
+	return value.replace(/\s*/g, '');
+}
 
-describe('filter#filter', function() {
+/**
+ * Removes alphabetical characters
+ *  - uses callback for async filtering e.g. posting something to a server for processing
+ * @param   {string}    value
+ * @param   {function}  cb
+ * @returns {void}
+ */
+function removeAlphabetical(value, cb) {
+	setTimeout(function() {
+		cb(value.replace(/[a-zA-Z]+/g, ''));
+	}, 500);
+}
 
-  it('should strip spaces and alphabetical characters', function() {
-    assert.equal(collection.filter('   my phone number is a (02)12345678   '), '(02)12345678');
-  });
+describe('chain#filter', function () {
 
-  it('should strip tabs and alphabetical characters', function() {
-    assert.equal(collection.filter('\tmy phone number is (02)12345678\n'), '(02)12345678');
-  });
+	var chain = filterChain([removeWhitespace, removeAlphabetical]);
+
+	it('should strip spaces and alphabetical characters', function(done) {
+		chain.filter('   my phone number is a (02)12345678   ', function(value) {
+			assert.equal(value, '(02)12345678');
+			done();
+		});
+	});
+
+	it('should strip spaces, tabs and alphabetical characters', function(done) {
+		chain.filter('\tmy phone number is (02) 12345678\n', function(value) {
+			assert.equal(value, '(02)12345678');
+			done();
+		});
+	});
 
 });
