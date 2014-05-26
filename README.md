@@ -10,10 +10,7 @@ Create a new filter chain from an array of filter functions.
 
 ### .add(filter)
 
-Add a filter function.
-
-Synchronous `function(value) { return value; }`,  or asynchronous `function(value, cb) { cb(value); }`.
-
+Add a filter function. Filter functions can be synchronous `function(value) { return value; }`,  or asynchronous `function(value, cb) { cb(value); }`.
 
 ### .filter(value, callback)
 
