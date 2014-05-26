@@ -4,7 +4,7 @@ A simple filter chain for running multiple filters on an input value.
 
 ## Methods
 
-### FilterChain(filters)
+### FilterChain([filters])
 
 Create a new filter chain from an array of filter functions.
 
