@@ -1,4 +1,4 @@
-# digitaledgeit-filter-chain
+# filter-chain
 
 A simple filter chain for running multiple filters on an input value.
 
