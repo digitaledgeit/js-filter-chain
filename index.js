@@ -12,11 +12,6 @@ function FilterChain(filters) {
 
 	//initialise the chain with the provided filters
 	this.filters = filters || [];
-	if (filters) {
-		for (var i = 0; i < filters.length; ++i) {
-			this.add(filters[i]);
-		}
-	}
 
 }
 
@@ -51,16 +46,20 @@ FilterChain.prototype.filter = function (value, callback) {
 	}
 
 	//run each filter on the value
-	for (var i = 0; i < this.filters.length; ++i) {
+	if (this.filters.length) {
+		for (var i = 0; i < this.filters.length; ++i) {
 
-		var filter = this.filters[i];
+			var filter = this.filters[i];
+	
+			if (filter.length > 1) {
+				filter(value, finish); //async
+			} else {
+				finish(filter(value)); //sync
+			}
 
-		if (filter.length > 1) {
-			filter(value, finish); //async
-		} else {
-			finish(filter(value)); //sync
 		}
-
+	} else {
+		callback(value);
 	}
 
 	return this;
