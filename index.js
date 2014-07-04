@@ -1,7 +1,7 @@
 /**
  * A filter chain
  * @constructor
- * @params  {object[]}      filters
+ * @params  {Array.<Function(*):Boolean>} filters
  */
 function FilterChain(filters) {
 
@@ -11,7 +11,7 @@ function FilterChain(filters) {
 	}
 
 	//initialise the chain with the provided filters
-	this.filters = [];
+	this.filters = filters || [];
 	if (filters) {
 		for (var i = 0; i < filters.length; ++i) {
 			this.add(filters[i]);
