@@ -1,15 +1,20 @@
 {
-	"name": "digitaledgeit-filter-chain",
-	"description": "A simple filter chain for running multiple filters on an input value.",
-	"keywords": ["filter", "filter-chain", "input-filter", "chain", "validate", "input", "validator"],
-	"repository" : {
-		"type": "git",
-		"url": "https://github.com/jameslnewell/js-filterer.git"
-	},
-	"devDependencies": {
-		"mocha": "~1.18.2"
-	},
-	"scripts": {
-		"test": "mocha -R spec ./test/test.js"
-	}
+  "name": "@digitaledgeit/filter-chain",
+  "description": "A simple filter chain for running multiple filters on an input value.",
+  "keywords": ["filter", "filter-chain", "input-filter", "chain", "validate", "input", "validator", "browser"],
+  "version": "0.3.0",
+  "repository" : {
+      "type": "git",
+      "url": "https://github.com/jameslnewell/js-filter-chain.git"
+  },
+  "bugs": {
+    "url": "https://github.com/digitaledgeit/js-filter-chain/issues"
+  },
+  "devDependencies": {
+      "mocha": "~1.18.2"
+  },
+  "scripts": {
+      "test": "mocha -R spec ./test/test.js"
+  },
+  "license": "MIT"
 }
